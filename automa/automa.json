@@ -1,0 +1,188 @@
+{
+    "extVersion": "1.28.1",
+    "name": "KGCheat",
+    "icon": "riGlobalLine",
+    "table": [],
+    "version": "1.28.1",
+    "drawflow": {
+        "edges": [
+            {
+                "class": "connected-edges",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-rgadlLHbGRbQCU2v5fTFurgadlLHbGRbQCU2v5fTFu-output-1-9z5j1ls9z5j1ls-input-1",
+                "markerEnd": "arrowclosed",
+                "selectable": true,
+                "source": "rgadlLHbGRbQCU2v5fTFu",
+                "sourceHandle": "rgadlLHbGRbQCU2v5fTFu-output-1",
+                "target": "9z5j1ls",
+                "targetHandle": "9z5j1ls-input-1",
+                "type": "custom",
+                "updatable": true
+            }
+        ],
+        "nodes": [
+            {
+                "computedPosition": {
+                    "x": 100.76923076923077,
+                    "y": 507.73076923076917,
+                    "z": 0
+                },
+                "data": {
+                    "activeInInput": false,
+                    "contextMenuName": "",
+                    "contextTypes": [],
+                    "date": "",
+                    "days": [],
+                    "delay": 5,
+                    "description": "",
+                    "disableBlock": false,
+                    "interval": 60,
+                    "isUrlRegex": false,
+                    "observeElement": {
+                        "baseElOptions": {
+                            "attributeFilter": [],
+                            "attributes": false,
+                            "characterData": false,
+                            "childList": true,
+                            "subtree": false
+                        },
+                        "baseSelector": "",
+                        "matchPattern": "",
+                        "selector": "",
+                        "targetOptions": {
+                            "attributeFilter": [],
+                            "attributes": false,
+                            "characterData": false,
+                            "childList": true,
+                            "subtree": false
+                        }
+                    },
+                    "parameters": [],
+                    "preferParamsInTab": false,
+                    "shortcut": "",
+                    "time": "00:00",
+                    "triggers": [
+                        {
+                            "data": {
+                                "isUrlRegex": true,
+                                "supportSPA": false,
+                                "url": "https\\:\\/\\/klavogonki\\.ru/g/\\?gmid=.+"
+                            },
+                            "id": "zEw8z",
+                            "type": "visit-web"
+                        }
+                    ],
+                    "type": "manual",
+                    "url": ""
+                },
+                "dimensions": {
+                    "height": 72,
+                    "width": 192
+                },
+                "dragging": false,
+                "events": {},
+                "handleBounds": {
+                    "source": [
+                        {
+                            "id": "rgadlLHbGRbQCU2v5fTFu-output-1",
+                            "position": "right",
+                            "x": 196,
+                            "y": 28,
+                            "width": 16,
+                            "height": 16
+                        }
+                    ]
+                },
+                "id": "rgadlLHbGRbQCU2v5fTFu",
+                "initialized": true,
+                "label": "trigger",
+                "position": {
+                    "x": 100.76923076923077,
+                    "y": 507.73076923076917
+                },
+                "resizing": false,
+                "selected": false,
+                "type": "BlockBasic"
+            },
+            {
+                "computedPosition": {
+                    "x": 479.23076923076906,
+                    "y": 508.46153846153845,
+                    "z": 1000
+                },
+                "data": {
+                    "code": "// Поле ввода.\nconst input = document.getElementById(\"inputtext\");\n// Текст.\nconst text = document.getElementById(\"typetext\");\n\n// // Основной блок.\n// const mainBlock = document.getElementById(\"inputtextblock\");\n\n// // Новая созданная кнопка.\n// const button = document.createElement(\"button\");\n// button.innerText = \"Активировать\";\n// mainBlock.appendChild(button);\n\n// Текст игры.\nlet gameText;\n// Номер вводимого символа.\nlet index = 0;\n\n// Шанс ошибки. Где 1 - без ошибок, а 0 - много ошибок.\nlet errorChance = 0.987;\n\n// Текст игры со специально допущенными ошибками.\nlet wrongText;\n\nlet rusAlphabet = \"абвгдеёжзийклмнопрстуфхцчшщъыьэюя\";\n\nfunction load() {\n    let settingsBlock = document.querySelector(\"div#params > div.r.tl > div.tr > div.bl > div.br > div.rc\");\n\n    if (settingsBlock) {\n        let rusBtn = document.createElement(\"button\");\n        let engBtn = document.createElement(\"button\");\n        let unErrorsBtn = document.createElement(\"button\");\n\n        rusBtn.addEventListener(\"click\", function () {\n            gameText = fixText(text.innerText, \"ru\");\n        });\n\n        engBtn.addEventListener(\"click\", function () {\n            gameText = fixText(text.innerText, \"en\");\n        });\n\n        unErrorsBtn.addEventListener(\"click\", function () {\n            errorChance = 1.01;\n        });\n\n        rusBtn.innerText = \"Русский\";\n        engBtn.innerText = \"English\";\n        unErrorsBtn.innerText = \"Бзе ошибок\";\n\n        settingsBlock.appendChild(rusBtn);\n        settingsBlock.appendChild(engBtn);\n        settingsBlock.appendChild(unErrorsBtn);\n    }\n}\n\n// Функция генерации случайного числа в диапазоне от a до b.\nfunction random(a, b) {\n    return Math.floor(Math.random() * (b - a + 1)) + a;\n}\n\nfunction randomBoolean() {\n    return Math.random() >= errorChance;\n}\n\n// Функция, которая уберает защиту из текста.\nfunction fixText(text, lang) {\n    if (lang == \"ru\") {\n        keymap = [\"AaBEeKkMHOoPpTXxyCc\", \"АаВЕеКкМНОоРрТХхуСс\"];\n    } else {\n        keymap = [\"АаВЕеКкМНОоРрТХхуСс\", \"AaBEeKkMHOoPpTXxyCc\"];\n    }\n\n    for (var i = 0; i < text.length; i++) {\n        let charPos = keymap[0].indexOf(text[i]);\n\n        if (charPos >= 0) {\n            text = text.replace(text.charAt(i), keymap[1].charAt(charPos));\n        }\n    }\n\n    return text;\n}\n\n// // Добавление события на созданную кнопку.\n// button.addEventListener(\"click\", function () {\n//     gameText = fixText(text.innerText, \"ru\");\n//     wrongText = text.innerText;\n\n//     console.log(gameText);\n// })\n\nload();\nconsole.log(gameText);\n\n// Добавление события по нажатию кнопки, когда поле ввода в фокусе.\ninput.addEventListener(\"keydown\", function (event) {\n    // if (event.keyCode === 13) {\n    //     gameText = fixText(text.innerText, \"ru\");\n    //     wrongText = text.innerText;\n\n    //     console.log(gameText);\n    // }\n\n    if (event.keyCode === 8 && index > 0 && input.value.length > 0) {\n        index -= 1;\n    } else if (event.keyCode != 8 && index < gameText.length) {\n        if (!randomBoolean()) {\n            input.value += gameText[index];\n        } else {\n            input.value += rusAlphabet[random(0, rusAlphabet.length - 1)];\n        }\n\n        index += 1;\n        event.preventDefault();\n    }\n});",
+                    "context": "website",
+                    "description": "",
+                    "disableBlock": false,
+                    "everyNewTab": false,
+                    "preloadScripts": [],
+                    "runBeforeLoad": true,
+                    "timeout": 1000
+                },
+                "dimensions": {
+                    "height": 72,
+                    "width": 192
+                },
+                "dragging": false,
+                "events": {},
+                "handleBounds": {
+                    "source": [
+                        {
+                            "id": "9z5j1ls-output-1",
+                            "position": "right",
+                            "x": 196,
+                            "y": 28,
+                            "width": 16,
+                            "height": 16
+                        }
+                    ],
+                    "target": [
+                        {
+                            "id": "9z5j1ls-input-1",
+                            "position": "left",
+                            "x": -20,
+                            "y": 28,
+                            "width": 16,
+                            "height": 16
+                        }
+                    ]
+                },
+                "id": "9z5j1ls",
+                "initialized": true,
+                "label": "javascript-code",
+                "position": {
+                    "x": 479.23076923076906,
+                    "y": 508.46153846153845
+                },
+                "resizing": false,
+                "selected": true,
+                "type": "BlockBasic"
+            }
+        ],
+        "position": [
+            0,
+            0
+        ],
+        "zoom": 0.6499999999999999
+    },
+    "settings": {
+        "blockDelay": 0,
+        "debugMode": false,
+        "defaultColumnName": "column",
+        "execContext": "popup",
+        "executedBlockOnWeb": false,
+        "inputAutocomplete": true,
+        "insertDefaultColumn": false,
+        "notification": true,
+        "onError": "stop-workflow",
+        "publicId": "",
+        "restartTimes": 3,
+        "reuseLastState": false,
+        "saveLog": true
+    },
+    "globalData": "{\n\t\"key\": \"value\"\n}",
+    "description": "",
+    "includedWorkflows": {}
+}
