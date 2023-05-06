@@ -31,5 +31,5 @@ The basic functions of the script are implemented when you enter the room and ar
 - **Errorless** _(the script works without making any mistakes)_.
 
 
-## Warning
-**This project is being developed for educational purposes, and the authors take no responsibility for its use.**
+## ⚠️ Warning
+⚠️ **This project is being developed for educational purposes, and the authors take no responsibility for its use.** ⚠️
