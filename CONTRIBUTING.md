@@ -1,3 +1,6 @@
+# 🌎 Document translations 🌎
+<kbd>[<img title="Russian" alt="Russian" src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ru.svg" width="27">](docs/CONTRIBUTING-ru.md)</kbd>
+
 # 🙌 Contributing Guidelines 🙌
 
 Thank you for considering contributing to our project! We welcome and appreciate contributions from everyone.
