@@ -1,3 +1,6 @@
+# Document translations:
+<kbd>[<img title="Russian" alt="Russian" src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ru.svg" width="22">](docs/README-ru.md)</kbd>
+
 # Table of contents
 - [Project description](#project-description)
 - [Installation](#installation)
