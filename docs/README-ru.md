@@ -29,9 +29,9 @@
 - Далее необходимо загрузить файл [`automa.json`](https://raw.githubusercontent.com/TungusSs/klavogonki-cheat/feature-and-update-branch/automa/automa.json).
 - Нажмите на значок `Automa`.
 - Нажмите на значок в виде `дома`.
-- Затем перейдите в раздел `Packages` на боковой панели.
-- Рядом с кнопкой `New Package` нажмите на стрелку.
-- Затем нажмите на кнопку `Import Package` и выберите загруженный файл.
+- Затем перейдите в раздел `Workflows` на боковой панели.
+- Рядом с кнопкой `New workflow` нажмите на стрелку.
+- Затем нажмите на кнопку `Import workflow` и выберите загруженный файл.
 
 
 ## ⌨️ Использование ⌨️ <a name="usage"></a>
