@@ -1,3 +1,8 @@
+<p align="center">
+    <img src="./logo/KGInsider.svg"
+       width="512" height="512">
+</p>
+
 ## 🌎 Document translations 🌎
 <kbd>[<img title="Russian" alt="Russian" src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ru.svg" width="27">](docs/README-ru.md)</kbd>
 
@@ -32,9 +37,9 @@ The following features are available with the KlavoGonki Cheat browser extension
 - Next, you need to download the file [`automa.json`](https://raw.githubusercontent.com/TungusSs/klavogonki-cheat/feature-and-update-branch/automa/automa.json).
 - Click on the icon of the `Automa`.
 - Click on the icon in the form of `home`.
-- Then go to the `Packages` section in the sidebar.
-- Next to the `New Package` button, click on the arrow.
-- Then click on the `Import Package` button and select the downloaded file.
+- Then go to the `Workflows` section in the sidebar.
+- Next to the `New workflow` button, click on the arrow.
+- Then click on the `Import workflow` button and select the downloaded file.
 
 
 ## ⌨️ Usage ⌨️ <a name="usage"></a>
