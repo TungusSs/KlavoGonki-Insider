@@ -1,3 +1,8 @@
+<p align="center">
+    <img src="../logo/KGInsider.svg"
+       width="512" height="512">
+</p>
+
 ## 📑 Оглавление 📑
 - [Описание проекта](#project-description)
 - [Функции](#features)
