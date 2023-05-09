@@ -1,3 +1,8 @@
+<p align="center">
+    <img src="./logo/KGInsider.svg"
+       width="512" height="512">
+</p>
+
 ## 🌎 Document translations 🌎
 <kbd>[<img title="Russian" alt="Russian" src="https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/ru.svg" width="27">](docs/README-ru.md)</kbd>
 
